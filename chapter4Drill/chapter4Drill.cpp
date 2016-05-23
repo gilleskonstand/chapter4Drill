@@ -40,37 +40,55 @@
 using namespace std;
 
 int main()
-{	
+{
+	int secondinverable = 0;
+	int firstinverable = 0;
 	//while (true) {
 	while (!cin.eof()){
+		firstinverable=0;
+		secondinverable = 0;
 		int firstinverable=0;
-		int secondinverable = 0;
 		cout << "firstinverable :";
 		cin >> firstinverable;
-		//check if input is valed int's
-		if (!cin.good()){
-			if (firstinverable == 909090) {
-				cout << " Cin is not good " << endl;
-			}
-		//testing if user typed any other variation of letter & integers, etc., then displaying error message
-		  else
-			{
-				cout << "\nInvalid Input. Entry must be an integer." << endl;
-				cin.clear();
-		//		cin.ignore(std::numeric_limits<streamsize> ::max(), '\n');
-			}
+		cout << "secondinverable :";
+		cin >> secondinverable;
+
 		//if input is valid integer then..
+		if (!cin.good()) {
+				cout << endl << "Invalid Input. Entry must be an integer." << endl << endl << endl;
+				cin.clear();
+				firstinverable = 0.0;
+				cin.ignore(std::numeric_limits<streamsize> ::max(), '\n');
+			}
 		else
 		{
-			cout << "secondinverable :";
+			if (firstinverable == 909090) {
+				cout << " cin is a break on the while loop " << endl;
+				break;
+			}
+			//testing if user typed any other variation of letter & integers, etc., then displaying error message
+			else
+			{ 
+
+				switch (firstinverable - secondinverable)
+				{
+				case 0: case 20 :
+					cout << "in teh switch stement firstinverable:  " << firstinverable
+						<< " " << "secondinverable:  " << secondinverable << endl;
+					break;
+				case '3': case '5': case '7':  case '9':
+					cout << firstinverable << " is od" << endl;
+					break;
+				}
+			//	cout << "firstinverable:  " << firstinverable
+			//		<< " " << "secondinverable:  " << secondinverable << endl;
+				//clear verables 
+				firstinverable = 0;
+			}
 		}
 
+		
 
-        cout << "firstinverable" << firstinverable 
-			<< " " << "secondinverable  " << secondinverable << endl;
-		//clear verables 
-		firstinverable = 0;
-		secondinverable = 0;
 	};
 
     return 0;
