@@ -39,6 +39,8 @@
 
 using namespace std;
 
+void Check_witch_isbigger(double input_double, double input_smallest , double  input_largets);
+
 int main()
 {
 	double smallest = 0;
@@ -91,3 +93,8 @@ int main()
     return 0;
 }
 
+
+void Check_witch_isbigger(double input_double, double input_smallest, double input_largets)
+{
+
+}
