@@ -41,49 +41,46 @@ using namespace std;
 
 int main()
 {
-	int secondinverable = 0;
-	int firstinverable = 0;
-	//while (true) {
+	double smallest = 0;
+	double largest = 0;
+	double input = 0;
+	double diff_smalest = 0;
+	double diff_largest = 0;
 	while (!cin.eof()){
-		firstinverable=0;
-		secondinverable = 0;
-		int firstinverable=0;
-		cout << "firstinverable :";
-		cin >> firstinverable;
-		cout << "secondinverable :";
-		cin >> secondinverable;
-
+		cout << "exit if you give this 909090  "<< endl << "firstinverable :";
+		cin >> input;
 		//if input is valid integer then..
 		if (!cin.good()) {
 				cout << endl << "Invalid Input. Entry must be an integer." << endl << endl << endl;
 				cin.clear();
-				firstinverable = 0.0;
+				input = 0.0;
 				cin.ignore(std::numeric_limits<streamsize> ::max(), '\n');
 			}
 		else
 		{
-			if (firstinverable == 909090) {
+			if (input == 909090) {
 				cout << " cin is a break on the while loop " << endl;
 				break;
 			}
 			//testing if user typed any other variation of letter & integers, etc., then displaying error message
 			else
 			{ 
+				//how to we check of firts or secod is bigger ... another if statment ....
+				diff_smalest = input - smallest;
+				diff_largest = input - largest;
+				
+				// need to fin a better way to di salest and largest in one go !
+				// Should only be one line of code 
 
-				switch (firstinverable - secondinverable)
+				if (diff_largest >=0)
 				{
-				case 0: case 20 :
-					cout << "in teh switch stement firstinverable:  " << firstinverable
-						<< " " << "secondinverable:  " << secondinverable << endl;
-					break;
-				case '3': case '5': case '7':  case '9':
-					cout << firstinverable << " is od" << endl;
-					break;
+					cout << " largest so far: " << input << endl;
+					largest = input;
 				}
-			//	cout << "firstinverable:  " << firstinverable
-			//		<< " " << "secondinverable:  " << secondinverable << endl;
-				//clear verables 
-				firstinverable = 0;
+				else {
+					cout << " stil teh largest : " << input << endl;
+				     }
+				
 			}
 		}
 
