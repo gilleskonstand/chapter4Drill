@@ -41,6 +41,8 @@ using namespace std;
 double smallest = 0;
 double largest = 0;
 double input = 0;
+double counter = 1;
+
 double diff_smalest = 0;
 double diff_largest = 0;
 
@@ -72,9 +74,6 @@ int main()
 				
 			}
 		}
-
-		
-
 	};
 
     return 0;
@@ -83,6 +82,12 @@ int main()
 
 void Check_witch_is_bigger(double input_double, double input_smallest, double input_largets)
 {
+	if (counter == 1) { 
+		smallest = input; 
+		largest = input; 
+		counter = counter + 1;
+	 } ;
+
 	diff_smalest = input - smallest;
 	diff_largest = input - largest;
 
@@ -95,7 +100,16 @@ void Check_witch_is_bigger(double input_double, double input_smallest, double in
 		largest = input;
 	}
 	else {
-		cout << " stil the largest : " << input << endl;
+		cout << " stil the largest : " << largest << endl;
+	}
+
+	if (diff_smalest <= 0)
+	{
+		cout << " Smalest so far: " << input << endl;
+		smallest = input;
+	}
+	else {
+		cout << " stil the smalest : " << smallest << endl;
 	}
 
 }
