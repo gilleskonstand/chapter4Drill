@@ -38,16 +38,16 @@
 #include <algorithm> // what is the standerd library for soort algorithm
 
 using namespace std;
+double smallest = 0;
+double largest = 0;
+double input = 0;
+double diff_smalest = 0;
+double diff_largest = 0;
 
-void Check_witch_isbigger(double input_double, double input_smallest , double  input_largets);
+void Check_witch_is_bigger(double input_double, double input_smallest , double  input_largets);
 
 int main()
 {
-	double smallest = 0;
-	double largest = 0;
-	double input = 0;
-	double diff_smalest = 0;
-	double diff_largest = 0;
 	while (!cin.eof()){
 		cout << "exit if you give this 909090  "<< endl << "firstinverable :";
 		cin >> input;
@@ -68,20 +68,7 @@ int main()
 			else
 			{ 
 				//how to we check of firts or secod is bigger ... another if statment ....
-				diff_smalest = input - smallest;
-				diff_largest = input - largest;
-				
-				// need to fin a better way to di salest and largest in one go !
-				// Should only be one line of code 
-
-				if (diff_largest >=0)
-				{
-					cout << " largest so far: " << input << endl;
-					largest = input;
-				}
-				else {
-					cout << " stil teh largest : " << input << endl;
-				     }
+				Check_witch_is_bigger(input,smallest,largest);
 				
 			}
 		}
@@ -94,7 +81,21 @@ int main()
 }
 
 
-void Check_witch_isbigger(double input_double, double input_smallest, double input_largets)
+void Check_witch_is_bigger(double input_double, double input_smallest, double input_largets)
 {
+	diff_smalest = input - smallest;
+	diff_largest = input - largest;
+
+	// need to fin a better way to di salest and largest in one go !
+	// Should only be one line of code 
+
+	if (diff_largest >= 0)
+	{
+		cout << " largest so far: " << input << endl;
+		largest = input;
+	}
+	else {
+		cout << " stil the largest : " << input << endl;
+	}
 
 }
