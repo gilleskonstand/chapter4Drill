@@ -42,17 +42,29 @@ double smallest = 0;
 double largest = 0;
 double input = 0;
 double counter = 1;
+string input_unit = "C";
 
 double diff_smalest = 0;
 double diff_largest = 0;
 
-void Check_witch_is_bigger(double input_double, double input_smallest , double  input_largets);
+typedef void(*Handler)();    /* A pointer to a handler function */
+							 /* The functions */
+void func3() { printf("3\n"); };
+void func2() { printf("2\n"); };
+void func1() { printf("1\n"); };
+void func0() { printf("0\n"); };
 
-int main()
+Handler jump_table[4] = { func0, func1, func2, func3 };
+void argements();
+
+void Check_witch_is_bigger(double input_double, double input_smallest , double  input_largets);
+void conver_to_mm(double input_double,string input_type);
+
+int main(int argc, char **argv)
 {
 	while (!cin.eof()){
 		cout << "exit if you give this 909090  "<< endl << "firstinverable :";
-		cin >> input;
+		cin >> input >> input_unit;
 		//if input is valid integer then..
 		if (!cin.good()) {
 				cout << endl << "Invalid Input. Entry must be an integer." << endl << endl << endl;
@@ -69,6 +81,7 @@ int main()
 			//testing if user typed any other variation of letter & integers, etc., then displaying error message
 			else
 			{ 
+				
 				//how to we check of firts or secod is bigger ... another if statment ....
 				Check_witch_is_bigger(input,smallest,largest);
 				
@@ -113,3 +126,51 @@ void Check_witch_is_bigger(double input_double, double input_smallest, double in
 	}
 
 }
+
+void conver_to_mm(double input_double, string input_type) 
+{/*
+	switch (input_type)
+	{
+	default:
+		break;
+	}
+	*/
+	cout << "Finction conver_to_mm" << endl;
+	
+};
+
+
+void argements(argv)
+{
+	int value;
+	 /* Convert first argument to 0-3 integer (modulus) */
+	value = ((atoi(argv[1]) % 4) + 4) % 4;
+
+	/* Call appropriate function (func0 thru func3) */
+	jump_table[value]();
+};
+
+/*
+typedef void (*Handler)(void);    /* A pointer to a handler function */
+
+/* The functions */
+void func3(void) { printf("3\n"); }
+void func2(void) { printf("2\n"); }
+void func1(void) { printf("1\n"); }
+void func0(void) { printf("0\n"); }
+
+Handler jump_table[4] = { func0, func1, func2, func3 };
+
+int main(int argc, char **argv) {
+	
+
+	/* Convert first argument to 0-3 integer (modulus) */
+	value = ((atoi(argv[1]) % 4) + 4) % 4;
+
+	/* Call appropriate function (func0 thru func3) */
+	jump_table[value]();
+
+	return 0;
+}
+
+*/
