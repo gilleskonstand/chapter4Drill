@@ -42,26 +42,43 @@ double smallest = 0;
 double largest = 0;
 double input = 0;
 double counter = 1;
-double total = 0;
 string input_unit = "C";
 
 double diff_smalest = 0;
 double diff_largest = 0;
 
+
 void Check_witch_is_bigger(double input_double, double input_smallest , double  input_largets);
 void conver_to_mm(double input_double,string input_type);
 
-double add_two_numbers(double new_number, double total);
+class WorkWithStrings {
+public:
+	void PrintToScreen(string in_string) {
+		cout << " " << in_string << endl;
+	 }
+	void PrintToScreen(double in_string) {
+		cout << " " << in_string << endl;
+	}
+	void PrintToScreen(int in_string) {
+		cout << " " << in_string << endl;
+	}
+	void PrintToScreen(char in_string) {
+		cout << " " << in_string << endl;
+	}
+};
 
-//int main(int argc, char **argv)
-int main()
+WorkWithStrings MyWorkString;
+
+int main(int argc, char **argv)
 {
+
 	while (!cin.eof()){
-		cout << "exit if you give this 909090  "<< endl << "firstinverable :";
+		MyWorkString.PrintToScreen("exit if you give this 909090  ");
+		MyWorkString.PrintToScreen("firstinverable :");
 		cin >> input >> input_unit;
 		//if input is valid integer then..
 		if (!cin.good()) {
-				cout << endl << "Invalid Input. Entry must be an integer." << endl << endl << endl;
+				MyWorkString.PrintToScreen("Invalid Input. Entry must be an integer.");
 				cin.clear();
 				input = 0.0;
 				cin.ignore(std::numeric_limits<streamsize> ::max(), '\n');
@@ -69,28 +86,23 @@ int main()
 		else
 		{
 			if (input == 909090) {
-				cout << " cin is a break on the while loop " << endl;
+				MyWorkString.PrintToScreen("cin is a break on the while loop :");
 				break;
 			}
 			//testing if user typed any other variation of letter & integers, etc., then displaying error message
 			else
 			{ 
-				cout << "Total so far " << add_two_numbers(input, total);
+				
 				//how to we check of firts or secod is bigger ... another if statment ....
 				Check_witch_is_bigger(input,smallest,largest);
 				
 			}
 		}
 	};
-
+	
     return 0;
 }
 
-double add_two_numbers(double new_number,double total) {
-	double return_calue ;
-	return_calue= new_number + total;
-	return return_calue;
-};
 
 void Check_witch_is_bigger(double input_double, double input_smallest, double input_largets)
 {
@@ -108,7 +120,9 @@ void Check_witch_is_bigger(double input_double, double input_smallest, double in
 
 	if (diff_largest >= 0)
 	{
-		cout << " largest so far: " << input << endl;
+		MyWorkString.PrintToScreen("largest so far: ");
+		MyWorkString.PrintToScreen( input );
+		//cout << " largest so far: " << input << endl;
 		largest = input;
 	}
 	else {
