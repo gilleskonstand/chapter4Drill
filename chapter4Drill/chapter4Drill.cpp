@@ -43,7 +43,6 @@ double largest = 0;
 double input = 0;
 double counter = 1;
 double total = 0;
-static int i = 0;
 string input_unit = "B";
 
 double diff_smalest = 0;
@@ -69,56 +68,9 @@ public:
 	}
 };
 
-
-class printClass
-{
-public:
-
-	printClass()
-	{
-	};
-	void printToScreen(){
-		cout << " This is a PrintClass printToclass" << endl;
-	};
-
-	virtual ~printClass()
-	{
-	};
-};
-
-
-
 //int main(int argc, char **argv)
-
-/***********************************************
-* first -- Demonstration of automatic         *
-*      variables.                             *
-***********************************************/
-int first(void)
-{
-	int i = 0; // Demonstration variable
-	cout << " first local i : " << i << endl;
-	cout << " first globale i : " << ::i << endl;
-
-	return (::i++);
-}
-/***********************************************
-* second -- Demonstration of a static         *
-*      variable.                              *
-***********************************************/
-int second(void)
-{
-	static int i = 0;  // Demonstration variable
-	cout << " second local i : " << i << endl;
-	cout << " second globale i : " << ::i << endl;
-	return (i++);
-}
-
-
-
 int main()
 {
-	/*
 	while (!cin.eof()){
 		MyWorkString.PrintToScreen("exit if you give this 909090  ");
 		MyWorkString.PrintToScreen("firstinverable :");
@@ -146,21 +98,6 @@ int main()
 			}
 		}
 	};
-	
-
-
- int counter;          // Call counter
-
-     for (counter = 0; counter < 3; counter++)
-        printf("First %d\n", first());
-
-     for (counter = 0; counter < 3; counter++)
-         printf("Second %d\n", second());
-		 */
-
-	printClass Myprint;
-
-	Myprint.printToScreen();
 
     return 0;
 }
