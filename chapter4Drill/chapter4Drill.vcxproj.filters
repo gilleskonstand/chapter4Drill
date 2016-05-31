@@ -27,6 +27,9 @@
     <ClInclude Include="chapter4Drill.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="printClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

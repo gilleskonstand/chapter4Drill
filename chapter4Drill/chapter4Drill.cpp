@@ -43,7 +43,8 @@ double largest = 0;
 double input = 0;
 double counter = 1;
 double total = 0;
-string input_unit = "C";
+static int i = 0;
+string input_unit = "B";
 
 double diff_smalest = 0;
 double diff_largest = 0;
@@ -53,9 +54,56 @@ void conver_to_mm(double input_double,string input_type);
 
 double add_two_numbers(double new_number, double total);
 
+
+class printClass
+{
+public:
+
+	printClass()
+	{
+	};
+	void printToScreen(){
+		cout << " This is a PrintClass printToclass" << endl;
+	};
+
+	virtual ~printClass()
+	{
+	};
+};
+
+
+
 //int main(int argc, char **argv)
+
+/***********************************************
+* first -- Demonstration of automatic         *
+*      variables.                             *
+***********************************************/
+int first(void)
+{
+	int i = 0; // Demonstration variable
+	cout << " first local i : " << i << endl;
+	cout << " first globale i : " << ::i << endl;
+
+	return (::i++);
+}
+/***********************************************
+* second -- Demonstration of a static         *
+*      variable.                              *
+***********************************************/
+int second(void)
+{
+	static int i = 0;  // Demonstration variable
+	cout << " second local i : " << i << endl;
+	cout << " second globale i : " << ::i << endl;
+	return (i++);
+}
+
+
+
 int main()
 {
+	/*
 	while (!cin.eof()){
 		cout << "exit if you give this 909090  "<< endl << "firstinverable :";
 		cin >> input >> input_unit;
@@ -82,6 +130,21 @@ int main()
 			}
 		}
 	};
+	
+
+
+ int counter;          // Call counter
+
+     for (counter = 0; counter < 3; counter++)
+        printf("First %d\n", first());
+
+     for (counter = 0; counter < 3; counter++)
+         printf("Second %d\n", second());
+		 */
+
+	printClass Myprint;
+
+	Myprint.printToScreen();
 
     return 0;
 }
